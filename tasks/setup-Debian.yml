@@ -20,6 +20,8 @@
     name: "{{ mysql_packages }}"
     state: present
     policy_rc_d: 101
+  environment:
+    PERCONA_TELEMETRY_DISABLE: "1"
   register: deb_mysql_install_packages
 
 # Because Ubuntu starts MySQL as part of the install process, we need to stop
